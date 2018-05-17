@@ -9,7 +9,7 @@
     hostName = "litarvan-vps";
 
     firewall.allowPing = true;
-    firewall.allowedTCPPorts = [ 443 80 21727 17334 ];
+    firewall.allowedTCPPorts = [ 443 80 ];
 
     nameservers = [
       "213.186.33.99"
