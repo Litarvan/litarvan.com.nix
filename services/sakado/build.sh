@@ -8,8 +8,7 @@ cd /tmp/sakado-build
 export GRADLE_USER_HOME="/tmp"
 gradle distZip
 
-mkdir $out
-cd $out
 unzip /tmp/sakado-build/build/distributions/$name.zip
+cp -r $name $out
 
 rm -rf /tmp/sakado-build
