@@ -5,7 +5,7 @@
     serviceConfig = {
         Type = "simple";
         User = "litarvan";
-        ExecStart = "${pkgs.nodejs-8_x}/bin/node /home/litarvan/pronote-api/index.js";
+        ExecStart = "${pkgs.nodejs-8_x}/bin/node ${pkgs.callPackage ./pronote.nix}/index.js";
         Restart = "on-failure";
     };
 
