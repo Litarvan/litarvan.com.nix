@@ -5,7 +5,8 @@
     serviceConfig = {
         Type = "simple";
         User = "litarvan";
-        ExecStart = "${pkgs.bash} -c 'JAVA_HOME=${java} ${pkgs.callPackage ./sakado.nix {}}/bin/sakado-server";
+        Environment = "JAVA_HOME=${java}";
+        ExecStart = "${pkgs.callPackage ./sakado.nix {}}/bin/sakado-server";
         Restart = "on-failure";
     };
 

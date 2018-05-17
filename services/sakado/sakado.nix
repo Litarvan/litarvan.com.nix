@@ -1,4 +1,10 @@
-{ pkgs }: with pkgs; stdenv.mkDerivation rec {
+{ pkgs }: with pkgs; stdenv.mkDerivation (let
+    firebaseConfig = pkgs.writeText "config/fcm.json" ''
+        {
+            "server-key": "${import ./key.nix}"
+        }
+    '';
+in {
     name = "sakado-server-1.3.2-BETA";
     src = fetchgit {
         url = "https://github.com/sakado-app/sakado-server.git";
@@ -7,4 +13,6 @@
     };
     builder = ./build.sh;
     inherit unzip gradle coreutils;
-}
+
+
+})
