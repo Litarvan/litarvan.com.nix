@@ -1,11 +1,11 @@
-{ pkgs, node ? pkgs.nodejs-8_x }: {
-    description = "Pronote API";
+{ pkgs, java ? pkgs.zulu }: {
+    description = "Sakado Server";
     after = [ "network.target" ];
 
     serviceConfig = {
         Type = "simple";
         User = "litarvan";
-        ExecStart = "${node}/bin/node ${pkgs.callPackage ./pronote.nix {}}/index.js";
+        ExecStart = "${pkgs.bash} -c 'JAVA_HOME=${java} ${pkgs.callPackage ./sakado.nix {}}/bin/sakado-server";
         Restart = "on-failure";
     };
 
