@@ -2,8 +2,9 @@
     name = "sakado-server-1.3.2-BETA";
     src = fetchgit {
         url = "https://github.com/sakado-app/sakado-server.git";
-        rev = "4d4c2f1ea37be93d1cd418d7126c0f982f1d476c";
+        rev = "2eeeeb9b331da3cb53917b744f0e519c60304e5c";
+        sha256 = "1zfvavfxxf7j0q1sj20qsw2rc2j8m5hj49dx10gjggzwav2qnw1p";
     };
     builder = ./build.sh;
-    inherit coreutils gnutar gzip;
+    inherit unzip gradle coreutils;
 }
