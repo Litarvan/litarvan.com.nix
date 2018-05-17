@@ -8,8 +8,8 @@ in {
     name = "sakado-server-1.3.2-BETA";
     src = fetchgit {
         url = "https://github.com/sakado-app/sakado-server.git";
-        rev = "ae72e6dbd0955b311a0090dc933a01ff8689a688";
-        sha256 = "0njx9rxxjl2p02vf6dpkp0bhzk6fn34gwjnwm0r7rgvibnld74y1";
+        rev = "852a38ccef9d3ec286c1d0bb2a772fcca604876d";
+        sha256 = "1gsjm7ki71ha88pjnc2ak0xvwpqaf32dk360cac1bmm59cq3iz21";
     };
     builder = ./build.sh;
     inherit unzip gradle coreutils;
