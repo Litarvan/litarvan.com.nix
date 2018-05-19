@@ -5,9 +5,12 @@
     serviceConfig = {
         Type = "simple";
         User = "litarvan";
-        Environment = "JAVA_HOME=${java}:PATH=/bin:${java}/bin";
-        ExecStart = "${pkgs.callPackage ./sakado.nix {}}/bin/sakado-server";
+        ExecStart = "${pkgs.bash}/bin/bash ${pkgs.callPackage ./sakado.nix {}}/bin/sakado-server";
         Restart = "on-failure";
+    };
+
+    environment = {
+        JAVA_HOME = java;
     };
 
     wantedBy = [ "multi-user.target" ];

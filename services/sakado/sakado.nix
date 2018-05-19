@@ -1,5 +1,5 @@
 { pkgs }: with pkgs; stdenv.mkDerivation (let
-    firebaseConfig = pkgs.writeText "config/fcm.json" ''
+    firebaseConfig = pkgs.writeText "fcm.json" ''
         {
             "server-key": "${import ./key.nix}"
         }
@@ -12,5 +12,5 @@ in {
         sha256 = "1gsjm7ki71ha88pjnc2ak0xvwpqaf32dk360cac1bmm59cq3iz21";
     };
     builder = ./build.sh;
-    inherit unzip gradle coreutils;
+    inherit unzip gradle coreutils gnugrep firebaseConfig;
 })
